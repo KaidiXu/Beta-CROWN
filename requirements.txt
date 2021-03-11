@@ -1,0 +1,8 @@
+torch==1.7.1
+torchvision
+pandas
+numpy==1.19.2
+matplotlib
+packaging>=20.0
+appdirs>=1.4
+oslo.concurrency>=4.2
