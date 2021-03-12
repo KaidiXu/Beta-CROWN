@@ -46,13 +46,13 @@ computed by PGD adversarial attacks.  Higher quality bounds are closer to y=x
 verifier gives quite loose bounds. *β*-CROWN BaBSR gives similar or better
 quality of bounds compared to SDP-FO while using only a fraction of time.
 
-Details of *β*-CROWN can be found in our paper:
+Details of *β*-CROWN can be found in [our paper](https://arxiv.org/pdf/2103.06624.pdf):
 
 ```
 @article{wang2021betacrown,
   title={Beta-CROWN: Efficient Bound Propagation with Per-neuron Split Constraints for Complete and Incomplete Neural Network Verification},
   author={Wang, Shiqi and Zhang, Huan and Xu, Kaidi and Lin, Xue and Jana, Suman and Hsieh, Cho-Jui and Kolter, Zico},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2103.06624},
   year={2021}
 }
 ```
