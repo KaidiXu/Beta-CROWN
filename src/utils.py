@@ -104,10 +104,14 @@ def load_model(args, weights_loaded=True):
     if not weights_loaded:
         return model_ori
 
+    map_location = None
+    if args.device == 'cpu':
+        map_location = torch.device('cpu')
+
     if 'cnn_4layer' not in args.model:
-        model_ori.load_state_dict(torch.load(args.load)['state_dict'][0])
+        model_ori.load_state_dict(torch.load(args.load, map_location)['state_dict'][0])
     else:
-        model_ori.load_state_dict(torch.load(args.load))
+        model_ori.load_state_dict(torch.load(args.load, map_location))
         if args.model == "cnn_4layer_b":
             args.MODEL = "b_adv"
             assert args.data == "CIFAR_SAMPLE"
