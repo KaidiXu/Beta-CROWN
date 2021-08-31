@@ -1,5 +1,12 @@
 ## *β*-CROWN: Efficient Bound Propagation with Per-neuron Split Constraints for Neural Network Verification
 
+### News
+
+*β*-CROWN empowered our [*α*,*β*-CROWN verifier](https://github.com/huanzhang12/alpha-beta-CROWN) (alpha-beta-CROWN), which **won VNN-COMP 2021** with the highest total score. Our verifier solves the most number of instances on 8 benchmarks and outperforms 11 SOTA tools. (details of competition results can be found
+[in the slides here](https://docs.google.com/presentation/d/1oM3NqqU03EUqgQVc3bGK2ENgHa57u-W6Q63Vflkv000/edit#slide=id.ge4496ad360_14_21)).
+
+### Introduction
+
 Robustness verification of neural networks aims to formally prove the correct
 prediction staying unchanged for any bounded adversarial perturbations.  Many
 existing verifiers solve a relaxed problem such as linear programming (LP) to
