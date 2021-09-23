@@ -208,6 +208,7 @@ def choose_node_parallel(lower_bounds, upper_bounds, orig_mask, layers, pre_relu
             raise NotImplementedError
 
     decision = []
+    logged = False
     for b in range(batch):
         new_score = [score[j][b] for j in range(len(score))]
         max_info = [torch.max(i, 0) for i in new_score]
@@ -232,12 +233,20 @@ def choose_node_parallel(lower_bounds, upper_bounds, orig_mask, layers, pre_relu
                     print('using first layer split')
                 # print('\tusing intercept score')
             else:
-                print('\t using a random choice')
+                if not logged:
+                    # avoid multiple print out
+                    print('\t using a random choice')
+                    logged = True
                 mask_item = [m[b] for m in mask]
+                added = False
                 for preferred_layer in np.random.choice(len(pre_relu_indices), len(pre_relu_indices), replace=False):
                     if len(mask_item[preferred_layer].nonzero()) != 0:
                         decision.append([preferred_layer, mask_item[preferred_layer].nonzero()[0].item()])
+                        added = True
                         break
+                if not added:
+                    # print("no unstable neuron left for batch idx:", b)
+                    decision.append([])
                 Icp_score_counter = 0
 
     if gt is False:
