@@ -136,7 +136,7 @@ python robustness_verifier.py --config exp_configs/mnist_conv_small.yaml  # MNIS
 python robustness_verifier.py --config exp_configs/mnist_conv_big.yaml    # MNIST ConvBig
 python robustness_verifier.py --config exp_configs/cifar_conv_small.yaml  # CIFAR ConvSmall
 python robustness_verifier.py --config exp_configs/cifar_conv_big.yaml    # CIFAR ConvBig
-python robustness_verifier.py --config exp_configs/cifar_resnet.yaml      # CIFAR ResNet
+python robustness_verifier.py --config exp_configs/cifar_resnet_wong.yaml # CIFAR ResNet
 
 # SDP models
 python robustness_verifier.py --config exp_configs/mnist_cnn_a_adv.yaml   # MNIST CNN-A-Adv
